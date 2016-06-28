@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var numero = 10;
+
+        console.log(typeof numero);
+        console.log(typeof Number);
+
+        Number.prototype.cuadrado = function() {
+            return this * this;
+        }
+
+        document.write(numero.cuadrado() + "<br>");
+
+        Number.prototype.media = function() {
+            return this / 2;
+        }
+
+        document.write(numero.media() + "<br>");
+
+        // Otra forma de hacerlo
+        // Funcion prototipo
+        Function.prototype.method = function(name, func) {
+            this.prototype[name] = func;
+        }
+
+        Number.method("potencia", function() {
+            return this * this;
+        });
+
+        document.write(numero.potencia() + "<br>");
+
+        Number.method("mediana", function() {
+            return this / 2;
+        });
+
+        document.write(numero.mediana() + "<br>");
+
+        String.method("hola", function() {
+            return "Hola " + this + "!!";
+        });
+
+        var string = "Felix";
+
+        document.write(string.hola() + "<br>");
+
+    </script>
+</body>
+</html>
