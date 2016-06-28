@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Puedes lanzar excepciones usando la sentencia throw y manejarlas usando las sentencias try...catch.
+        */
+        var num1 = 1;
+        var num2 = "5";
+
+        var check = function(a, b) {
+            if ( typeof a !== "number" || typeof b !== "number") {
+                // Agregar el contenido del throw creado un Json
+                throw {
+                    name: "TypeError",
+                    msg: "Necesita ingresar solo numeros"
+                }
+            }
+
+            return a + b;
+
+        }
+
+        var suma = function(a, b) {
+            try {
+                return check(a, b);
+            } catch(error) {
+                console.log(error.name + ": " + error.msg);
+            }
+        }
+
+        document.write(suma(num1, num2));
+    </script>
+</body>
+</html>
