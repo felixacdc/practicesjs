@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parametros no definidos en funciones</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Las funciones en javaScript permite pasar argumentos no definidos.
+
+            El objeto arguments es una variable local disponible dentro de todas las funciones; arguments no puede ser usada como propiedad de Function.
+
+            Es posible invocar los argumentos de una funcion utilizando el objeto arguments. Este objeto contiene una entrada para cada argumento pasado a la funcion, la primera entrada tiene un indice de 0. De esa misma manera, si se envian tres parametros a una funcion, se puede acceder a ellos de la siguiente manera:
+
+            arguments[0]
+            arguments[1]
+            arguments[2]
+
+        */
+
+        var suma = function(num1, num2) {
+            return num1 + num2;
+        }
+
+        console.log(suma(10, 5, 1, 2, 3, 5));
+
+        var multiplicacion = function() {
+
+            var total = 1;
+
+            for (var i = 0; i < arguments.length; i++) {
+                total *= arguments[i];
+            }
+            return total;
+        }
+
+        console.log(multiplicacion(2, 5, 1, 2, 3, 2));
+    </script>
+</body>
+</html>
