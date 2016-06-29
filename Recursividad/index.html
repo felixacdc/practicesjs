@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var contenedor = [];
+        var min = 20;
+        var max = 50;
+
+        // Metodo que verifica si un elemento ya existe en un array u objeto
+        Object.prototype.contains = function(element) {
+            for (var i = 0; i < this.length; i++) {
+                if( this[i] == element ) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // Funcion que almacena los nuemros aleatorios
+        var aleatorio = function() {
+            // Generamos un numero aleatorio
+            var num = Math.floor(Math.random() * max - min + 1) + min;
+
+            if ( contenedor.length < 20 ) {
+                if ( !contenedor.contains(num) ) {
+                    contenedor.push(num);
+                }
+
+                aleatorio();
+            }
+        }
+
+        aleatorio();
+
+        document.write(contenedor);
+
+    </script>    
+</body>
+</html>
