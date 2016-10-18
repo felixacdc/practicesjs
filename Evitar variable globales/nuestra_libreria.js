@@ -5,13 +5,15 @@
     }   
 }*/
 
-var miLibreria = (function() {
+var miLibreria = (function(x_externa) {
     var x = "Mi libreria";
-    return {
-        show: function() {
-            console.log(x);
+    
+    var show = function() {
+            console.log(x_externa + ' - Mi X: ' + x);
         }
+    return {
+        show: show
     }   
-})();
+})(x);
 
 //var y = miLibreria();
