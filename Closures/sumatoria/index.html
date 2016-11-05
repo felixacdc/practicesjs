@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+    
+    <script>
+        var sumatoria = (inicio) => {
+            let total = inicio,
+                sumar = (constante) => {
+                    total += constante;
+                    console.log(total);
+                };
+            
+            return sumar;
+        }
+        
+        let suma10 = sumatoria(10),
+            suma15 = sumatoria(15);
+        
+        console.log(suma10(3));
+        console.log(suma10(3));
+        console.log(suma15(5));
+    </script>
+</body>
+</html>
